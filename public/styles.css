@@ -1,0 +1,943 @@
+/* Fondo oscuro con efecto neón y transparencia */
+body {
+    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 50, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+  }
+  
+  /* Contenedor principal */
+  .container-principal{
+    display: flex;
+    justify-content: space-between; /* Distribuye los divs a la izquierda y derecha */
+    align-items: flex-start;
+    width: 100%;
+    padding-bottom: 20px;
+    
+    
+  }
+
+  
+  .left-section {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.5);
+    max-width: 1200px;
+    width: 35%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  /* Fondo animado del contenedor */
+  .left-section:before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, rgba(0, 255, 255, 0.5), rgba(0, 0, 255, 0.3));
+    filter: blur(50px);
+    opacity: 0.6;
+    animation: backgroundAnimation 10s infinite linear;
+    z-index: -1;
+    flex-direction: row; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: flex-start; /* Mantiene el título arriba */
+  }
+  
+  @keyframes backgroundAnimation {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(50%, 50%); }
+    100% { transform: translate(0, 0); }
+  }
+  
+  /* SECCION IZQUIERDA - Tacho y Estado */
+  .left-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.2);
+    display: flex;
+    display: flex;
+    flex-direction: column; /* Apila elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: flex-start; /* Mantiene el título arriba */
+    position: relative;
+  
+  }
+ .left-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+ }
+ .content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4vh;
+ }
+ .tacho, .info {
+    flex: 1; /* Ambos elementos ocupan el mismo espacio horizontalmente */
+    padding: 10px;
+}
+
+.tacho {
+    text-align: left; /* Opcional: Alinea el contenido de 'tacho' a la izquierda */
+}
+
+.info {
+    text-align: right; /* Opcional: Alinea el contenido de 'info' a la derecha */
+}
+
+
+/* Estilos generales del reproductor de audio */
+#audioPlayer {
+  display: none; /* Oculta el reproductor de audio por defecto */
+}
+
+/* Asegúrate de ajustar la ruta según tu estructura de directorios */
+.audio-container {
+  position: center;
+  bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+  right: 20px; /* Ajusta la distancia desde el borde derecho */
+  width: 200px;
+  height: 200px;
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  transform-style: preserve-3d;
+  animation: rotate 20s linear infinite;
+  z-index: 1000;
+}
+
+
+.audio-container.playing::before {
+  content: '';
+  position: absolute;
+  width: 10%;
+  height: 80%;
+  border-radius: 50%;
+  animation: shadowBlink 1.6s infinite; /* Agrega la nueva animación */
+}
+/* Definimos la animación para el parpadeo del filtro */
+@keyframes shadowBlink {
+  0% {
+    filter: none;
+  }
+  10% {
+    filter: drop-shadow(0 0 30px rgba(30, 143, 255, 0.897)) contrast(1.0); /* Turquesa */
+  }
+  30% {
+    filter: drop-shadow(0 0 30px rgba(157, 9, 225, 0.578)) contrast(1.1); /* Morado */
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgb(3, 255, 238)) contrast(1.0); /* Verde */
+  }
+ 
+  
+  90% {
+    filter: drop-shadow(0 0 30px rgb(18, 2, 255, 10)) contrast(1); /* Azul */
+  }
+  100% {
+    filter: none; /* Vuelve al estado sin filtro */
+  }
+}
+
+
+
+.audio-icon {
+  width: 320px;
+  height: 260px;
+  margin-bottom: 30px;
+ 
+  background-image: url('images/Robot.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.4s ease, background-image 1.3s ease;
+  
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 1)) contrast(1.0);
+}
+.audio-icon:hover {
+  /* Efecto de transformación 3D en el hover */
+  transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+
+  /* Sombra más marcada para el efecto de profundidad */
+ 
+
+  /* Filtro de profundidad con brillo y sombra */
+  filter: drop-shadow(0 0 30px rgba(30, 144, 255, 0.8)) contrast(1.0);
+}
+
+.audio-container.playing .audio-icon {
+  background-image: url('images/robi1.gif'); /* Imagen cuando el VTuber está hablando */
+  animation: portalTransition 20.5s ease-in-out forwards; /* Solo ocurre una vez */
+  animation: shadowBlink 1.8s infinite; /* Filtro parpadeante mientras reproduce */
+}
+
+/* Efecto de portal durante la transición */
+@keyframes portalTransition {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(30, 144, 255, 0.5), inset 0 0 0 rgba(64, 224, 208, 0.0);
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(1.2); /* Efecto de agrandarse */
+    box-shadow: 0 0 60px rgba(30, 144, 255, 0.7), inset 0 0 30px rgba(64, 224, 208, 0.5);
+    filter: blur(5px);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(30, 144, 255, 0.5), inset 0 0 0 rgba(64, 224, 208, 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* Tacho de basura */
+.tacho {
+  width: 120px;
+  height: 300px;
+  border-radius: 15px;
+  background: #141414;
+  margin: 0 auto 5px;
+  box-shadow: inset 0 0 40px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.5);
+ transform: rotateX(5deg); 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden; /* Para que el contenido no se desborde */
+}
+
+#h2e{
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+/* Animación cuando el tacho se activa con hover */
+.tacho:hover {
+  transform: scale(1.1) rotateX(180deg) rotate(5deg);
+  box-shadow: inset 0 0 60px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.8);
+}
+
+/* El nivel dentro del tacho */
+.nivel {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.6), rgba(0, 150, 255, 0.8));
+  position: absolute;
+  bottom: 0;
+  transition: height 0.7s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  overflow: hidden;
+  animation: cambioColor 10s infinite alternate ease-in-out;
+}
+
+/* Burbujeo dentro del nivel */
+.nivel::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 200%;
+  top: -150%;
+  left: -25%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  animation: burbujeo 4s infinite ease-in-out;
+  filter: blur(10px);
+  opacity: 0.6;
+}
+
+/* Efecto de calor mezclado con frío */
+.nivel::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, rgba(0, 255, 255, 0.6), rgba(0, 150, 255, 0.3), transparent);
+  top: -50%;
+  left: -25%;
+  animation: lava 3s infinite linear;
+  filter: blur(15px);
+  opacity: 0.8;
+}
+
+/* Crecimiento de nivel con cambio de color sutil */
+.tacho:hover .nivel {
+  height: 80%; /* Simula que se llena el tacho */
+  animation: cambioColor 5s infinite alternate ease-in-out;
+}
+
+/* Animación de burbujeo */
+@keyframes burbujeo {
+  0% {
+      transform: translateY(0) scale(1);
+  }
+  50% {
+      transform: translateY(-100%) scale(1.2);
+  }
+  100% {
+      transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación de lava (mezcla de calor y frío) */
+@keyframes lava {
+  0% {
+      transform: translateY(0) scale(1);
+  }
+  50% {
+      transform: translateY(-80%) scale(1.3);
+  }
+  100% {
+      transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación de cambio de color gradual */
+@keyframes cambioColor {
+  0% {
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(0, 150, 255, 1));
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
+  25% {
+      background: linear-gradient(135deg, rgba(0, 150, 255, 0.8), rgba(128, 0, 255, 1));
+      box-shadow: 0 0 20px rgba(128, 0, 255, 0.8);
+  }
+  50% {
+      background: linear-gradient(135deg, rgba(128, 0, 255, 0.8), rgba(255, 0, 255, 1));
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+  }
+  75% {
+      background: linear-gradient(135deg, rgba(255, 0, 255, 0.8), rgba(255, 105, 180, 1));
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+  }
+  100% {
+      background: linear-gradient(135deg, rgba(255, 105, 180, 0.8), rgba(0, 255, 255, 1));
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
+}
+
+  
+  .info {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  /* Estado y Distancia - Efecto neon y animaciones cuando cambian */
+  #estado, #distancia {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  
+  #estado.changed, #distancia.changed {
+    animation: highlightChange 0.6s ease-in-out;
+  }
+  
+  @keyframes highlightChange {
+    0% {
+      transform: scale(1.2);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 60px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+  }
+  
+  /* Efecto de parpadeo para alertas */
+  .alerta {
+    color: #ff4d4d;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 1);
+    animation: blinkAlert 1s infinite;
+  }
+  
+  @keyframes blinkAlert {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  
+  /* SECCION DERECHA - Análisis y Recomendaciones futurista */
+  .right-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(255, 0, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+  }
+
+  
+  #guardadito {
+    background-color: #1e1e2f;
+    color: #e0e0e0;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    padding: 12px 30px;
+    border: 2px solid #4c4cff;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #guardadito::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.75s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  
+  #guardadito:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  #guardadito:hover {
+    background-color: #2a2a4a;
+    box-shadow: 0px 0px 20px 5px rgba(76, 76, 255, 0.5);
+    transform: scale(1.05);
+  }
+  
+  #guardadito:active {
+    transform: scale(0.98);
+    box-shadow: 0px 0px 25px 7px rgba(76, 76, 255, 0.8);
+  }
+  
+  
+  
+  .analysis {
+    margin-bottom: 1px;
+  }
+  
+  .analysis p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+   
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Efecto hover en los párrafos de análisis */
+  .analysis p:hover {
+    transform: rotate(3deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 255, 200, 0.7);
+  }
+  
+  /* IA - Mensajes de Recomendaciones casuales */
+ 
+  
+  @keyframes appearMessage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* TABLA - Sección inferior, ocupa el ancho completo */
+  .table-section {
+    grid-column: span 2;
+    margin-top: 0px;
+
+   
+  }
+  
+.tablita{
+  max-height: 150px;
+    overflow-y : scroll;
+    overflow-x:hidden ;
+}
+
+  table {
+    width: 100%;
+    margin-top: 5px;
+    border-collapse: collapse;
+    backdrop-filter: blur(8px);
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+  }
+  
+  th {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #00ffff;
+  }
+  
+  td {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Efecto hover en las celdas de la tabla */
+  td:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.5);
+  }
+  
+
+
+
+
+
+/* Contenedor de recomendaciones y predicciones */
+.guardar {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #00bcd4;
+  animation: pulse 2s infinite;
+}
+
+/* Contenedor para cada sección */
+#recommendations, #predictions {
+  width: 45%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  position: relative;
+  color: #00bcd4;
+  border: 1px solid #00bcd4;
+  text-shadow: 0 0 10px rgba(0,255,255,0.7);
+}
+
+/* Estilo para los encabezados */
+#recommendations h2, #predictions h2 {
+  font-size: 1.8em;
+  color: #00bcd4;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(0,255,255,0.5);
+}
+
+/* Estilo para el texto */
+#recommendations p, #predictions p {
+  font-size: 1.4em;
+  color: #e0e0e0;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Animación de pulso para el contenedor */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Efecto de luz de fondo */
+.guardar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.7));
+  opacity: 0.4;
+  z-index: -1;
+  animation: glowing 2s infinite alternate;
+}
+
+/* Animación de brillo */
+@keyframes glowing {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+
+
+
+.prediccions {
+  position: relative;
+  width: 18.75rem; /* 300px convertido a rem */
+  height: 12.5rem; /* 200px convertido a rem */
+  margin: 1.25rem auto; /* 20px convertido a rem */
+  overflow: hidden;
+  border-radius: 1.25rem; /* 20px convertido a rem */
+  border: 0.125rem solid #00ffcc; /* 2px convertido a rem */
+  text-align: center;
+}
+
+/* Estilo base */
+#prediccionLlenado {
+  font-size: 1.5rem; /* 24px convertido a rem */
+  color: #00ffcc;
+  position: relative;
+  font-weight: bold;
+  margin-top: 1.25rem; /* 20px convertido a rem */
+  text-shadow: 0 0 0.625rem #00ffcc, 0 0 1.25rem #00ffcc, 0 0 1.875rem #00ffcc, 0 0 2.5rem #00ffcc, 0 0 3.125rem #00ffcc, 0 0 3.75rem #00ffcc, 0 0 4.375rem #00ffcc; /* px a rem */
+  transition: background 0.5s ease-in-out, text-shadow 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones suaves */
+}
+
+/* Estilo con fondo */
+#prediccionLlenado.with-background {
+  background: rgba(255, 69, 0, 0.2);
+  border-radius: 0.625rem; /* 10px convertido a rem */
+  box-shadow: 0 0 0.9375rem rgba(255, 69, 0, 0.8); /* 15px convertido a rem */
+  text-shadow: 0 0 1.25rem #ff4500, 0 0 1.875rem #ff4500, 0 0 2.5rem #ff4500, 0 0 3.125rem #ff4500, 0 0 3.75rem #ff4500; /* px a rem */
+  transform: scale(1.05);
+}
+
+/* Estilo sin fondo */
+#prediccionLlenado.no-background {
+  font-size: 1.5rem; /* 24px convertido a rem */
+  color: #ffffff;
+  position: relative;
+  font-weight: bold;
+  margin-top: 1.25rem; /* 20px convertido a rem */
+  text-shadow: 0 0 0.625rem rgba(68, 255, 239, 0.448), 0 0 1.25rem rgba(255, 255, 255, 0.3); /* px a rem */
+  transition: background 0.3s, text-shadow 0.3s, transform 0.3s;
+}
+
+/* Animación de parpadeo para efecto de fuego */
+@keyframes fire {
+  0% { text-shadow: 0 0 0.625rem #ff4500, 0 0 1.25rem #ff4500, 0 0 1.875rem #ff4500; /* px a rem */ }
+  50% { text-shadow: 0 0 1.875rem #ff4500, 0 0 3.125rem #ff4500, 0 0 4.375rem #ff4500; /* px a rem */ }
+  100% { text-shadow: 0 0 0.625rem #ff4500, 0 0 1.25rem #ff4500, 0 0 1.875rem #ff4500; /* px a rem */ }
+}
+
+#prediccionLlenado.flickering {
+  animation: fire 30s infinite alternate;
+}
+
+/* Estilos para el efecto de agua */
+.water {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 255, 0.2);
+  border-radius: 1.25rem; /* 20px convertido a rem */
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Efecto de burbujas y ondas */
+.water:before, .water:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -75%;
+  left: -50%;
+  background: rgba(0, 255, 255, 0.3);
+  border-radius: 45%;
+  animation: wave 6s infinite linear;
+  opacity: 0.7;
+}
+
+.water:after {
+  animation-delay: -3s;
+}
+
+/* Efecto de remolino */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efecto de chispas */
+.sparks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spark {
+  position: absolute;
+  width: 0.625rem; /* 10px convertido a rem */
+  height: 0.5rem; /* 8px convertido a rem */
+  background: #00ffcc;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spark-animation 2s infinite;
+}
+
+@keyframes spark-animation {
+  0% {
+    transform: translateY(-6.25rem); /* 100px convertido a rem */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(6.25rem); /* 100px convertido a rem */
+    opacity: 0;
+  }
+}
+
+
+
+  
+  /* Adaptación para móviles */
+  @media only screen and (max-width: 768px) {
+/* Fondo oscuro con efecto neón y transparencia para móvil */
+body {
+  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 50, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Ajustes del contenedor principal en móviles */
+.container-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Ajuste de la sección izquierda para móviles */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.5);
+  width: 90%; /* Se ajusta a la pantalla del móvil */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  height:50rem ;
+  
+}
+
+.left-section h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Ajustes de la clase content para móviles */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  height: 60%;
+}
+
+.tacho{
+  width: 100%; /* Se ajusta al ancho completo del móvil */
+  height: 80%;
+  text-align: center;
+}
+.info {
+  width: 80%; /* Se ajusta al ancho completo del móvil */
+  height: 10rem;
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+/* Ajustes del contenedor de audio en móviles */
+.audio-container {
+  bottom: 15px;
+  width: 220px;
+  height: 220px;
+  
+}
+
+.audio-icon {
+  width: 400px;
+  height: 280px;
+  margin-bottom: 50px;
+
+ 
+}
+
+/* Ajuste del tacho de basura para móviles */
+.tacho {
+  width: 100px;
+  height: 270px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 30px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+/* Ajustes adicionales para mejorar la usabilidad en pantallas pequeñas */
+.nivel {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Contenedor de recomendaciones y predicciones */
+.guardar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #00bcd4;
+  animation: pulse 2s infinite;
+  width: 90%;
+  gap: 5px;
+
+
+  
+}
+
+.right-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(255, 0, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.guardar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.7));
+  opacity: 0.4;
+  z-index: -1;
+  animation: glowing 2s infinite alternate;
+}
+
+#guardadito {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  padding: 12px 30px;
+  border: 2px solid #4c4cff;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 27.3rem;
+}
+
+#guardadito::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50.3rem;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.75s;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+#guardadito:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#guardadito:hover {
+  background-color: #2a2a4a;
+  box-shadow: 0px 0px 20px 5px rgba(76, 76, 255, 0.5);
+  transform: scale(1.05);
+}
+
+#guardadito:active {
+  transform: scale(0.98);
+  box-shadow: 0px 0px 25px 7px rgba(76, 76, 255, 0.8);
+}
+
+/* Contenedor para cada sección */
+#recommendations, #predictions {
+  width: 90%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  position: relative;
+  color: #00bcd4;
+  border: 1px solid #00bcd4;
+  text-shadow: 0 0 10px rgba(0,255,255,0.7);
+}
+
+
+  
+
+
+  }
+  

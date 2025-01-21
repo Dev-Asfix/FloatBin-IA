@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voces Disponibles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voces Disponibles</h1>
+    <button id="list-voices-button">Listar Voces</button>
+    <div id="voices-list"></div>
+    <p id="response"></p>
+
+    <script>
+        const synth = window.speechSynthesis;
+        const voicesListElement = document.getElementById('voices-list');
+        const responseElement = document.getElementById('response');
+        let currentUtterance = null; // Variable para almacenar el utterance actual
+
+        function listVoices() {
+            // Asegurarse de que las voces estén cargadas
+            if (synth.getVoices().length === 0) {
+                synth.onvoiceschanged = () => {
+                    displayVoices();
+                };
+            } else {
+                displayVoices();
+            }
+        }
+
+        function displayVoices() {
+            const voices = synth.getVoices();
+            voicesListElement.innerHTML = ''; // Limpiar el contenido previo
+            voices.forEach((voice, index) => {
+                const voiceElement = document.createElement('div');
+                voiceElement.innerHTML = `
+                    <strong>${index}: ${voice.name}</strong> (${voice.lang})
+                    <button onclick="speakWithVoice('${voice.name}')">Escuchar</button>
+                `;
+                voicesListElement.appendChild(voiceElement);
+            });
+        }
+
+        function speakWithVoice(voiceName) {
+            // Detener la reproducción actual si hay alguna
+            if (currentUtterance) {
+                synth.cancel(); // Detiene cualquier utterance en reproducción
+            }
+
+            const utterance = new SpeechSynthesisUtterance('Hola, esta es una prueba de la voz seleccionada.');
+            utterance.lang = 'es-ES'; // Ajustar el idioma si es necesario
+            const voices = synth.getVoices();
+            const selectedVoice = voices.find(voice => voice.name === voiceName);
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+                utterance.onend = () => {
+                    // Cuando termine de hablar, habilitar el botón de escuchar nuevamente
+                    responseElement.textContent = 'Listo para otra voz.';
+                };
+                currentUtterance = utterance; // Actualiza el utterance actual
+                synth.speak(utterance);
+            } else {
+                responseElement.textContent = 'La voz seleccionada no está disponible.';
+            }
+        }
+
+        document.getElementById('list-voices-button').addEventListener('click', listVoices);
+    </script>
+</body>
+</html>

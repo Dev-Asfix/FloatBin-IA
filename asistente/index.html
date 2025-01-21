@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Virtual Futurista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-box futuristic-glow">
+            <h2>Asistente Virtual</h2>
+            <button id="start-button" class="neon-button">Iniciar reconocimiento de voz</button>
+            <button id="stop-button" class="neon-button">Detener reconocimiento de voz</button>
+            <button id="refresh-button" class="neon-button">Actualizar Página</button>
+
+            <p id="response" class="response">Esperando...</p>
+            <p id="transcript" class="transcript">Aquí aparecerá lo que digas...</p>
+        </div>
+        <div class="notas futuristic-glow">
+            <h3>Gestión de Notas</h3>
+            <input type="text" id="note-input" placeholder="Escribe una nota" class="note-input">
+            <button id="add-note-button" class="neon-button">Añadir Nota</button>
+            <button id="list-notes-button" class="neon-button">Consultar Notas</button>
+            <ul id="notes-list" class="notes-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

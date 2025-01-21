@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="489"
+  height="338" viewBox="0 0 489 338">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Mask" width="387" height="192" transform="translate(-0.342 0.078)" fill="#fff"
+        opacity="0" />
+    </clipPath>
+    <filter id="Oval" x="118.1" y="156.1" width="28.8" height="28.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feFlood flood-color="#131127" flood-opacity="0.698" />
+      <feComposite operator="in" in2="blur" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <filter id="Oval-2" x="212.1" y="135.1" width="28.8" height="28.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur-2" />
+      <feFlood flood-color="#131127" flood-opacity="0.698" />
+      <feComposite operator="in" in2="blur-2" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <filter id="Oval-3" x="307.1" y="122.1" width="27.8" height="27.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur-3" />
+      <feFlood flood-color="#131127" flood-opacity="0.698" />
+      <feComposite operator="in" in2="blur-3" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <filter id="Oval-4" x="402.1" y="105.1" width="27.8" height="27.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur-4" />
+      <feFlood flood-color="#131127" flood-opacity="0.698" />
+      <feComposite operator="in" in2="blur-4" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <filter id="Oval-5" x="245.1" y="178.1" width="27.8" height="27.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur-5" />
+      <feFlood flood-color="#131127" flood-opacity="0.698" />
+      <feComposite operator="in" in2="blur-5" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <filter id="Oval-6" x="151.1" y="188.1" width="28.8" height="28.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur-6" />
+      <feFlood flood-color="#131127" flood-opacity="0.698" />
+      <feComposite operator="in" in2="blur-6" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <filter id="Oval-7" x="55.1" y="202.1" width="28.8" height="28.8" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="blur-7" />
+      <feFlood flood-color="#131127" flood-opacity="0.698" />
+      <feComposite operator="in" in2="blur-7" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.125" y1="0.5" x2="0.84" y2="0.5"
+      gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#721eff" />
+      <stop offset="1" stop-color="#390f80" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <g id="dashboard-01" transform="translate(-7603.074 -7682)">
+    <rect id="Rectangle_67" data-name="Rectangle 67" width="489" height="338" rx="8"
+      transform="translate(7603.074 7682)" fill="#17161e" />
+    <path id="Rectangle_68" data-name="Rectangle 68"
+      d="M8,0H481a8,8,0,0,1,8,8V23a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V8A8,8,0,0,1,8,0Z"
+      transform="translate(7603.074 7682)" fill="#201e2b" />
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="3" cy="3" r="3"
+      transform="translate(7627.074 7692)" fill="#4c4861" />
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="3" cy="3" r="3"
+      transform="translate(7636.074 7692)" fill="#4c4861" />
+    <circle id="Ellipse_10" data-name="Ellipse 10" cx="3" cy="3" r="3"
+      transform="translate(7646.074 7692)" fill="#4c4861" />
+    <g id="Mask_Group_4" data-name="Mask Group 4" transform="translate(7649.416 7787.922)"
+      clip-path="url(#clip-path)">
+      <path id="Shape"
+        d="M0,34.819,31.539,11.265,63.077,32.77l31.539,7.169,31.539-23.554,31.539,1.024,31.539,2.048,31.539,24.578L252.31,20.481l31.539,2.048,31.539,6.144L346.926,0l31.539,26.626L410,15.361l31.539,26.626,31.539-23.554L504.62,5.12l31.539,1.024L567.7,23.554,599.236,25.6l31.539,10.241,31.539-15.361,31.539,22.53,31.539-18.433L756.93,32.77l31.539-5.12,31.539,14.337,31.539-20.481,31.539,6.144,31.539,8.193,31.539-8.193"
+        transform="translate(-198.995 110.981)" fill="none" stroke="#928fff" stroke-miterlimit="10"
+        stroke-width="1" opacity="0.4" />
+      <path id="Shape-2" data-name="Shape"
+        d="M0,123.949l31.539-23.367,31.539-8.128,31.539,7.112L126.155,88.39l31.539,4.064h31.539l31.539,17.272L252.31,86.358,283.849,62.99l31.539,31.5,31.539-28.447,31.539-23.367L410,83.31l31.539-14.224,31.539-40.639,31.539,8.128,31.539,21.335L567.7,11.176l31.539,17.272,31.539,96.518,31.539-24.383L693.852,0l31.539,45.719,31.539,8.128,31.539-10.16,31.539,56.895,31.539,10.16,31.539-21.335L914.623,101.6l31.539-50.8"
+        transform="translate(-197.805 0.298)" fill="none" stroke="#721eff" stroke-miterlimit="10"
+        stroke-width="2" />
+      <path id="Shape-3" data-name="Shape"
+        d="M0,123.949l31.539-23.367,31.539-8.128,31.539,7.112L126.155,88.39l31.539,4.064h31.539l31.539,17.272L252.31,86.358,283.849,62.99l31.539,31.5,31.539-28.447,31.539-23.367L410,83.31l31.539-14.224,31.539-40.639,31.539,8.128,31.539,21.335L567.7,11.176l31.539,17.272,31.539,96.518,31.539-24.383L693.852,0l31.539,45.719,31.539,8.128,31.539-10.16,31.539,56.895,31.539,10.16,31.539-21.335L914.623,101.6l31.539-50.8"
+        transform="translate(-197.563 7.141)" fill="none" stroke="#131127" stroke-miterlimit="10"
+        stroke-width="1" />
+      <path id="Shape-4" data-name="Shape"
+        d="M0,77.893l31.539,51.928,31.539,19.972,31.539-35.95,31.539-9.986,31.539-8.988,31.539,71.9,31.539-43.939L252.31,61.915l31.539,14.979,31.539-11.983,31.539-7.989,31.539-14.979L410,30.957l31.539,13.981L473.081,0,504.62,64.911,536.158,146.8,567.7,115.84l31.539,18.974,31.539-16.977,31.539-9.986,31.539,6.99,31.539,1,37.546,6.99,25.531-13.981h31.539l31.539,27.961,31.539-26.963,32.29,63.912,30.788-34.952"
+        transform="translate(-200.185 13.389)" fill="none" stroke="#928fff" stroke-miterlimit="10"
+        stroke-width="1" opacity="0.4" />
+      <g transform="matrix(1, 0, 0, 1, -46.34, -105.92)" filter="url(#Oval)">
+        <circle id="Oval-8" data-name="Oval" cx="4.5" cy="4.5" r="4.5"
+          transform="translate(128 164)" fill="#2a293d" stroke="#8bd8f1" stroke-miterlimit="10"
+          stroke-width="1.8" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -46.34, -105.92)" filter="url(#Oval-2)">
+        <circle id="Oval-9" data-name="Oval" cx="4.5" cy="4.5" r="4.5"
+          transform="translate(222 143)" fill="#2a293d" stroke="#8bd8f1" stroke-miterlimit="10"
+          stroke-width="1.8" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -46.34, -105.92)" filter="url(#Oval-3)">
+        <circle id="Oval-10" data-name="Oval" cx="4" cy="4" r="4" transform="translate(317 130)"
+          fill="#2a293d" stroke="#8bd8f1" stroke-miterlimit="10" stroke-width="1.8" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -46.34, -105.92)" filter="url(#Oval-4)">
+        <circle id="Oval-11" data-name="Oval" cx="4" cy="4" r="4" transform="translate(412 113)"
+          fill="#2a293d" stroke="#8bd8f1" stroke-miterlimit="10" stroke-width="1.8" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -46.34, -105.92)" filter="url(#Oval-5)">
+        <circle id="Oval-12" data-name="Oval" cx="4" cy="4" r="4" transform="translate(255 186)"
+          fill="#2a293d" stroke="#8bd8f1" stroke-miterlimit="10" stroke-width="1.8" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -46.34, -105.92)" filter="url(#Oval-6)">
+        <circle id="Oval-13" data-name="Oval" cx="4.5" cy="4.5" r="4.5"
+          transform="translate(161 196)" fill="#2a293d" stroke="#8bd8f1" stroke-miterlimit="10"
+          stroke-width="1.8" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -46.34, -105.92)" filter="url(#Oval-7)">
+        <circle id="Oval-14" data-name="Oval" cx="4.5" cy="4.5" r="4.5"
+          transform="translate(65 210)" fill="#2a293d" stroke="#928fff" stroke-miterlimit="10"
+          stroke-width="1.8" />
+      </g>
+    </g>
+    <g id="Group_32" data-name="Group 32" transform="translate(7648.82 7837.313)">
+      <path id="Line" d="M0,.3,387.986.777" transform="translate(0 -0.299)" fill="none"
+        stroke="#b9bed3" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.1" />
+      <path id="Line-2" data-name="Line" d="M0,.3,387.986.777" transform="translate(0 67.539)"
+        fill="none" stroke="#b9bed3" stroke-linecap="square" stroke-miterlimit="10"
+        stroke-width="0.1" />
+      <path id="Line-3" data-name="Line" d="M0,.294,387.986.785" transform="translate(0 134.193)"
+        fill="none" stroke="#b9bed3" stroke-linecap="square" stroke-miterlimit="10"
+        stroke-width="0.1" />
+    </g>
+    <text id="_0-4" data-name="0-4" transform="translate(7697.616 7994.535)" fill="#b9bed3"
+      font-size="16" font-family="Rubik-Regular, Rubik" opacity="0.8">
+      <tspan x="0" y="0">0-4</tspan>
+    </text>
+    <text id="_4-6" data-name="4-6" transform="translate(7781.074 7996)" fill="#b9bed3"
+      font-size="17" font-family="Rubik-Regular, Rubik" opacity="0.8">
+      <tspan x="0" y="0">4-6</tspan>
+    </text>
+    <text id="_6-8" data-name="6-8" transform="translate(7862.074 7996)" fill="#b9bed3"
+      font-size="17" font-family="Rubik-Regular, Rubik" opacity="0.8">
+      <tspan x="0" y="0">6-8</tspan>
+    </text>
+    <text id="_8-10" data-name="8-10" transform="translate(7941.074 7996)" fill="#b9bed3"
+      font-size="17" font-family="Rubik-Regular, Rubik" opacity="0.8">
+      <tspan x="0" y="0">8-10</tspan>
+    </text>
+    <rect id="Rectangle_69" data-name="Rectangle 69" width="181" height="8" rx="4"
+      transform="translate(7803.074 7753) rotate(180)" fill="url(#linear-gradient)" />
+  </g>
+</svg>

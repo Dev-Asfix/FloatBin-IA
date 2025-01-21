@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="491"
+  height="340" viewBox="0 0 491 340">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.125" y1="0.5" x2="0.84" y2="0.5"
+      gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#721eff" />
+      <stop offset="1" stop-color="#390f80" stop-opacity="0" />
+    </linearGradient>
+    <filter id="Rectangle_6_Copy_9" x="256.712" y="57.26" width="56.845" height="255.549"
+      filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feFlood flood-color="#0d172d" flood-opacity="0.102" />
+      <feComposite operator="in" in2="blur" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <filter id="Rectangle_6_Copy_2" x="68.874" y="97.776" width="56.845" height="215.273"
+      filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="5" result="blur-2" />
+      <feFlood flood-color="#0d172d" flood-opacity="0.102" />
+      <feComposite operator="in" in2="blur-2" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1"
+      gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b184fc" />
+      <stop offset="1" stop-color="#721eff" />
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.5" x2="0.5" y2="1"
+      gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#7de1f1" />
+      <stop offset="1" stop-color="#721eff" />
+    </linearGradient>
+    <filter id="Rectangle_6_Copy_7" x="162.794" y="186.385" width="56.845" height="126.664"
+      filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="5" result="blur-3" />
+      <feFlood flood-color="#0d172d" flood-opacity="0.102" />
+      <feComposite operator="in" in2="blur-3" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+    <filter id="Rectangle_6_Copy_11" x="350.632" y="57.26" width="56.845" height="255.788"
+      filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="5" result="blur-4" />
+      <feFlood flood-color="#0d172d" flood-opacity="0.102" />
+      <feComposite operator="in" in2="blur-4" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+  </defs>
+  <g id="dashboard-02" transform="translate(-8077 -7674.64)">
+    <g id="Group_28" data-name="Group 28" transform="translate(8077 7675)">
+      <rect id="Rectangle_67" data-name="Rectangle 67" width="491" height="340" rx="8"
+        transform="translate(0 -0.36)" fill="#17161e" />
+      <path id="Rectangle_68" data-name="Rectangle 68"
+        d="M8,0H483a8,8,0,0,1,8,8V23a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V8A8,8,0,0,1,8,0Z"
+        transform="translate(0 -0.36)" fill="#201e2b" />
+      <circle id="Ellipse_8" data-name="Ellipse 8" cx="3" cy="3" r="3"
+        transform="translate(24 9.64)" fill="#4c4861" />
+      <circle id="Ellipse_9" data-name="Ellipse 9" cx="3" cy="3" r="3"
+        transform="translate(33 9.64)" fill="#4c4861" />
+      <circle id="Ellipse_10" data-name="Ellipse 10" cx="3" cy="3" r="3"
+        transform="translate(43 9.64)" fill="#4c4861" />
+    </g>
+    <rect id="Rectangle_69" data-name="Rectangle 69" width="181" height="9" rx="4.5"
+      transform="translate(8282 7744.64) rotate(180)" fill="url(#linear-gradient)" />
+    <rect id="Rectangle_70" data-name="Rectangle 70" width="95" height="8" rx="4"
+      transform="translate(8196 7728.64) rotate(180)" fill="url(#linear-gradient)" />
+    <text id="_0-4" data-name="0-4" transform="translate(8157.639 7991.051)" fill="#b9bed3"
+      font-size="16" font-family="Rubik-Regular, Rubik" opacity="0.8">
+      <tspan x="0" y="0">0-4</tspan>
+    </text>
+    <text id="_4-6" data-name="4-6" transform="translate(8254 7991.64)" fill="#b9bed3"
+      font-size="17" font-family="Rubik-Regular, Rubik" opacity="0.8">
+      <tspan x="0" y="0">4-6</tspan>
+    </text>
+    <text id="_6-8" data-name="6-8" transform="translate(8347 7991.64)" fill="#b9bed3"
+      font-size="17" font-family="Rubik-Regular, Rubik" opacity="0.8">
+      <tspan x="0" y="0">6-8</tspan>
+    </text>
+    <text id="_8-10" data-name="8-10" transform="translate(8438 7991.64)" fill="#b9bed3"
+      font-size="17" font-family="Rubik-Regular, Rubik" opacity="0.8">
+      <tspan x="0" y="0">8-10</tspan>
+    </text>
+    <g id="Group_33" data-name="Group 33" transform="translate(8127.772 7832.096)">
+      <path id="Line" d="M0,.3l389.455.48" transform="translate(0 -0.299)" fill="none"
+        stroke="#b9bed3" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.1" />
+      <path id="Line-2" data-name="Line" d="M0,.3l389.455.48" transform="translate(0 67.796)"
+        fill="none" stroke="#b9bed3" stroke-linecap="square" stroke-miterlimit="10"
+        stroke-width="0.1" />
+      <path id="Line-3" data-name="Line" d="M0,.294,389.455.787" transform="translate(0 134.702)"
+        fill="none" stroke="#b9bed3" stroke-linecap="square" stroke-miterlimit="10"
+        stroke-width="0.1" />
+    </g>
+    <g id="Group_27" data-name="Group 27" transform="translate(8160.874 7741.9)">
+      <g transform="matrix(1, 0, 0, 1, -83.87, -67.26)" filter="url(#Rectangle_6_Copy_9)">
+        <rect id="Rectangle_6_Copy_9-2" data-name="Rectangle 6 Copy 9" width="26.845"
+          height="225.549" rx="2" transform="translate(271.71 67.26)" fill="rgba(255,255,255,0.12)" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -83.87, -67.26)" filter="url(#Rectangle_6_Copy_2)">
+        <rect id="Rectangle_6_Copy_2-2" data-name="Rectangle 6 Copy 2" width="26.845"
+          height="185.273" rx="2" transform="translate(83.87 107.78)" fill="rgba(255,255,255,0.12)" />
+      </g>
+      <rect id="Rectangle_6_Copy_3" data-name="Rectangle 6 Copy 3" width="26.845" height="133.719"
+        rx="2" transform="translate(0 92.069)" fill="url(#linear-gradient-3)" />
+      <rect id="Rectangle_6_Copy_3-2" data-name="Rectangle 6 Copy 3" width="26.845" height="206.592"
+        rx="2" transform="translate(281.335 19.196)" fill="url(#linear-gradient-4)" />
+      <rect id="Rectangle_6_Copy_3-3" data-name="Rectangle 6 Copy 3" width="26.845" height="60.845"
+        rx="2" transform="translate(93.779 164.943)" fill="url(#linear-gradient-4)" />
+      <g transform="matrix(1, 0, 0, 1, -83.87, -67.26)" filter="url(#Rectangle_6_Copy_7)">
+        <rect id="Rectangle_6_Copy_7-2" data-name="Rectangle 6 Copy 7" width="26.845"
+          height="96.664" rx="2" transform="translate(177.79 196.39)" fill="rgba(255,255,255,0.12)" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -83.87, -67.26)" filter="url(#Rectangle_6_Copy_11)">
+        <rect id="Rectangle_6_Copy_11-2" data-name="Rectangle 6 Copy 11" width="26.845"
+          height="225.788" rx="2" transform="translate(365.63 67.26)" fill="rgba(255,255,255,0.12)" />
+      </g>
+      <rect id="Rectangle_6_Copy_3-4" data-name="Rectangle 6 Copy 3" width="26.845" height="181.504"
+        rx="2" transform="translate(187.556 44.284)" fill="url(#linear-gradient-3)" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,244 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Cambiado a min-height */
+    overflow: auto; /* Permitir scroll */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1600px;
+    height: 90vh;
+    padding: 20px 0; /* Espaciado adicional */
+}
+
+/* Caja de chat */
+.chat-box {
+    width: 48%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transform: rotateY(-10deg);
+    margin-bottom: 20px; /* Separación entre elementos */
+    transition: transform 0.6s ease;
+}
+
+.chat-box:hover {
+    transform: rotateY(0deg);
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    color: #00ffcc;
+    margin-bottom: 30px;
+}
+
+.response, .transcript {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    margin: 25px 0;
+}
+
+/* Caja de notas */
+.notas {
+    width: 48%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transform: rotateY(10deg);
+    transition: transform 0.6s ease;
+}
+
+.notas:hover {
+    transform: rotateY(0deg);
+}
+
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #ff66cc;
+    margin-bottom: 30px;
+}
+
+/* Botones con efecto de neón */
+.neon-button{
+    background-color: transparent;
+    border: 2px solid #00ffcc;
+    color: #00ffcc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin: 15px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(0, 255, 204, 0.5), transparent);
+    transition: all 0.6s ease;
+}
+
+.neon-button:hover::before {
+    left: 100%;
+}
+
+.neon-button:hover {
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.7), 0 0 40px rgba(0, 255, 204, 0.5), 0 0 60px rgba(0, 255, 204, 0.2);
+}
+
+/* Inputs futuristas */
+.note-input {
+    width: 80%;
+    padding: 15px;
+    margin: 20px 0;
+    border: none;
+    border-bottom: 2px solid #ff66cc;
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.note-input:focus {
+    border-bottom: 2px solid #00ffcc;
+    outline: none;
+}
+
+/* Lista de notas */
+.notes-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.notes-list li {
+    background: rgba(0, 255, 204, 0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 4px solid #00ffcc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.notes-list li:hover {
+    transform: scale(1.05);
+}
+
+.notes-list li .delete-button {
+    background-color: transparent;
+    border: 2px solid #ff66cc;
+    color: #ff66cc;
+    font-family: 'Orbitron', sans-serif;
+    padding: 8px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.notes-list li .delete-button:hover {
+    background-color: #ff66cc;
+    color: #fff;
+}
+
+/* Efecto futurista de glow */
+.futuristic-glow {
+    position: relative;
+}
+
+.futuristic-glow::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgba(255, 102, 204, 0.5), rgba(0, 255, 204, 0.5));
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.7;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        filter: blur(5px);
+        opacity: 0.4;
+    }
+    100% {
+        filter: blur(20px);
+        opacity: 0.8;
+    }
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chat-box, .notas {
+        width: 90%;
+        margin-bottom: 20px;
+        transform: none; /* Desactivar rotación en pantallas pequeñas */
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .response, .transcript {
+        font-size: 18px;
+    }
+
+    .neon-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .note-input {
+        width: 90%;
+    }
+}
