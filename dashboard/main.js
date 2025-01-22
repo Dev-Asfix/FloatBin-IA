@@ -379,31 +379,32 @@ const Restaurants = () => {
   };
   return (React.createElement(MenuSection, { icon: "fa-regular fa-pot-food", id: "restaurants-section", title: "Get it delivered!" }, getRestaurants()));
 };
+
 const Movies = () => {
   const getMovies = () => {
     return [{
       desc: "A tale of some people watching over a large portion of space.",
       id: 1,
       icon: "fa-solid fa-galaxy",
-      image: "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFydmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      image: "./images/R.jpg",
       title: "Protectors of the Milky Way"
     }, {
       desc: "Some people leave their holes to disrupt some things.",
       id: 2,
       icon: "fa-solid fa-hat-wizard",
-      image: "https://images.unsplash.com/photo-1535666669445-e8c15cd2e7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bG9yZCUyMG9mJTIwdGhlJTIwcmluZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      image: "./images/R2.jpg",
       title: "Hole People"
     }, {
       desc: "A boy with a dent in his head tries to stop a bad guy. And by bad I mean bad at winning.",
       id: 3,
       icon: "fa-solid fa-broom-ball",
-      image: "https://images.unsplash.com/photo-1632266484284-a11d9e3a460a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhhcnJ5JTIwcG90dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      image: "./images/R3.jpg",
       title: "Pot of Hair"
     }, {
       desc: "A long drawn out story of some people fighting over some space. Cuz there isn't enough of it.",
       id: 4,
       icon: "fa-solid fa-starship-freighter",
-      image: "https://images.unsplash.com/photo-1533613220915-609f661a6fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      image: "./images/img01.png",
       title: "Area Fights"
     }].map((movie) => {
       const styles = {
@@ -421,6 +422,29 @@ const Movies = () => {
   };
   return (React.createElement(MenuSection, { icon: "fa-solid fa-camera-movie", id: "movies-section", scrollable: true, title: "Popcorn time!" }, getMovies()));
 };
+
+
+
+
+
+//--------------
+// Nueva Sección: Notificaciones Rápidas
+const ControlEstados = () => {
+  return React.createElement(
+    "div",
+    { id: "control", className: "control" },
+    React.createElement("iframe", {
+      src: "/public/index.html",
+      className: "control-iframe",
+
+    })
+  );
+};
+
+
+
+
+
 const UserStatusButton = (props) => {
   const { userStatus, setUserStatusTo } = React.useContext(AppContext);
   const handleOnClick = () => {
@@ -445,9 +469,11 @@ const Menu = () => {
           React.createElement("span", null, "Hyperplexed")),
         React.createElement(Weather, null),
         React.createElement(Restaurants, null),
+        React.createElement(ControlEstados),
         React.createElement(Tools, null),
         React.createElement(Movies, null)))));
 };
+
 const Background = () => {
   const { userStatus, setUserStatusTo } = React.useContext(AppContext);
   const handleOnClick = () => {
@@ -462,6 +488,12 @@ const Loading = () => {
   return (React.createElement("div", { id: "app-loading-icon" },
     React.createElement("i", { className: "fa-solid fa-spinner-third" })));
 };
+
+
+
+
+
+
 const AppContext = React.createContext(null);
 const App = () => {
   const [userStatus, setUserStatusTo] = React.useState(UserStatus.LoggedOut);
@@ -473,7 +505,9 @@ const App = () => {
       React.createElement(Info, { id: "app-info" }),
       React.createElement(Pin, null),
       React.createElement(Menu, null),
+
       React.createElement(Background, null),
+
       React.createElement("div", { id: "sign-in-button-wrapper" },
         React.createElement(UserStatusButton, { icon: "fa-solid fa-arrow-right-to-arc", id: "sign-in-button", userStatus: UserStatus.LoggingIn })),
       React.createElement(Loading, null))));

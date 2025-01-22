@@ -208,7 +208,7 @@ const timeManager = {
 			}
 		);
 		const todaysDate = document.querySelector('#today');
-		todaysDate.innerHTML = `${localDateString} at ${localTimeString}`;
+		todaysDate.innerHTML = `${localDateString} a las ${localTimeString}`;
 	},
 
 	// Handle sunset/sunrise
