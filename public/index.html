@@ -39,7 +39,7 @@
         <div class="guardar">
           <button
             id="guardadito"
-            onclick="window.location.href='/chatbot/index.html'"
+            onclick="window.location.href='/clima-main/index.html'"
           >
             ML
           </button>
@@ -446,40 +446,24 @@
           angleX += directionX * 0.5; // Rotación más suave
           angleY += directionY * 1.5;
 
-          // Oscilación aleatoria para un movimiento más natural
-          if (Math.random() < 0.1) {
-            directionX = Math.random() < 0.5 ? 1 : -1; // Cambia aleatoriamente la dirección
-          }
-          if (Math.random() < 0.1) {
-            directionY = Math.random() < 0.5 ? 1 : -1; // Cambia aleatoriamente la dirección
-          }
-
           // Limita la rotación en menor rango cuando está en "playing"
           if (angleX > 15 || angleX < -10) {
-            directionX *= -1; // Cambia de dirección
+            directionX *= -1; // Cambia de dirección en X
           }
           if (angleY > 20 || angleY < -20) {
-            directionY *= -1; // Cambia de dirección
+            directionY *= -1; // Cambia de dirección en Y
           }
         } else {
           // Lógica cuando NO está en estado "playing"
           angleX += directionX; // Mantener una rotación más sutil
           angleY += directionY;
 
-          // Oscilación aleatoria para un movimiento más natural
-          if (Math.random() < 0.05) {
-            directionX = Math.random() < 0.5 ? 1 : -1; // Cambia aleatoriamente la dirección
-          }
-          if (Math.random() < 0.05) {
-            directionY = Math.random() < 0.5 ? 1 : -1; // Cambia aleatoriamente la dirección
-          }
-
           // Limita la rotación en mayor rango
           if (angleX > 35 || angleX < -10) {
-            directionX *= -1; // Cambia de dirección
+            directionX *= -1; // Cambia de dirección en X
           }
           if (angleY > 30 || angleY < -30) {
-            directionY *= -1; // Cambia de dirección
+            directionY *= -1; // Cambia de dirección en Y
           }
         }
 

@@ -629,14 +629,14 @@
 		"type": "atmosphere",
 		"icon": "50d",
 		"id": 741,
-		"src": "/assets/icons/atmosphere/fog-day.svg",
+		"src": "assets/icons/atmosphere/fog-day.svg",
 		"alt": "fog"
 	},
 	{
 		"type": "atmosphere",
 		"icon": "50n",
 		"id": 741,
-		"src": "./assets/icons/atmosphere/fog-night.svg",
+		"src": "assets/icons/atmosphere/fog-night.svg",
 		"alt": "fog"
 	},
 	{

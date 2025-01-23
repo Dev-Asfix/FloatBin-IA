@@ -795,4 +795,34 @@ body input, body h1, body h3, body a, body span {
   
 }
 
+
+
+/* Contenedor principal del control */
+#control-clima {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%; /* Ocupa el 90% del ancho del contenedor padre */
+  height: 50rem;
+  margin: 2rem auto; /* Centrado horizontal y margen superior/inferior */
+  padding: 1rem; /* Espaciado interno */
+  background-color: transparent; /* Fondo claro */
+  
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* iframe de control */
+.control-clima-iframe {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Altura ajustable al contenedor */
+  min-height: 50vh; /* Mínimo 50% de la altura de la ventana */
+  border: none;
+  border-radius: 0.5rem; /* Bordes redondeados alineados con el contenedor */
+  overflow: hidden; /* Evita que el contenido sobresalga */
+  
+}
+
+  
   

@@ -104,7 +104,7 @@ const Reminder = () => {
     React.createElement("div", { className: "reminder-icon" },
       React.createElement("i", { className: "fa-regular fa-bell" })),
     React.createElement("span", { className: "reminder-text" },
-      "Extra cool people meeting ",
+      "Conectando Innovación y Sostenibilidad ",
       React.createElement("span", { className: "reminder-time" }, "10AM"))));
 };
 const Time = () => {
@@ -213,16 +213,16 @@ const QuickNav = () => {
   const getItems = () => {
     return [{
       id: 1,
-      label: "Weather"
+      label: "Clima"
     }, {
       id: 2,
-      label: "Food"
+      label: "Estado del Tacho"
     }, {
       id: 3,
-      label: "Apps"
+      label: "Predicción de Llenado"
     }, {
       id: 4,
-      label: "Movies"
+      label: "Notificaciones"
     }].map((item) => {
       return (React.createElement("div", { key: item.id, className: "quick-nav-item clear-button" },
         React.createElement("span", { className: "quick-nav-item-label" }, item.label)));
@@ -347,30 +347,34 @@ const Tools = () => {
 const Restaurants = () => {
   const getRestaurants = () => {
     return [{
-      desc: "The best burgers in town",
+      desc: "Asistente inteligente avanzado",
       id: 1,
-      image: "https://images.unsplash.com/photo-1606131731446-5568d87113aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Burgers"
+      image: "./images/Chatbot.png",
+      title: "Chatbot IA",
+      link: "../chatbot/index.html",
     }, {
-      desc: "The worst ice-cream around",
+      desc: "Pronóstico en tiempo real",
       id: 2,
-      image: "https://images.unsplash.com/photo-1576506295286-5cda18df43e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aWNlJTIwY3JlYW18ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-      title: "Ice Cream"
+      image: "./images/clima.png",
+      title: "Clima",
+      link: "#control-clima",
     }, {
-      desc: "This 'Za be gettin down",
+      desc: "Monitoreo de residuos",
       id: 3,
-      image: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-      title: "Pizza"
+      image: "./images/tacho1.png",
+      title: "Estados",
+      link: "#control",
     }, {
-      desc: "BBQ ain't need no rhyme",
+      desc: "Gestión sostenible simplificada",
       id: 4,
-      image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YmFyYmVxdWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-      title: "BBQ"
+      image: "./images/pagina1.png",
+      title: "Pagina web",
+      link: "../FloatBin.html",
     }].map((restaurant) => {
       const styles = {
         backgroundImage: `url(${restaurant.image})`
       };
-      return (React.createElement("div", { key: restaurant.id, className: "restaurant-card background-image", style: styles },
+      return (React.createElement("div", { key: restaurant.id, className: "restaurant-card background-image", style: styles, onClick: () => window.location.href = restaurant.link, },
         React.createElement("div", { className: "restaurant-card-content" },
           React.createElement("div", { className: "restaurant-card-content-items" },
             React.createElement("span", { className: "restaurant-card-title" }, restaurant.title),
@@ -440,6 +444,19 @@ const ControlEstados = () => {
     })
   );
 };
+//--------------
+// Nueva Sección: Notificaciones Rápidas
+const ControlClima = () => {
+  return React.createElement(
+    "div",
+    { id: "control-clima", className: "control-clima" },
+    React.createElement("iframe", {
+      src: "/clima-main/index.html",
+      className: "control-clima-iframe",
+
+    })
+  );
+};
 
 
 
@@ -464,13 +481,14 @@ const Menu = () => {
           React.createElement("div", { className: "app-menu-content-header-section" },
             React.createElement(UserStatusButton, { icon: "fa-solid fa-arrow-right-from-arc", id: "sign-out-button", userStatus: UserStatus.LoggedOut }))),
         React.createElement(QuickNav, null),
-        React.createElement("a", { id: "youtube-link", className: "clear-button", href: "https://www.youtube.com/c/Hyperplexed?sub_confirmation=1", target: "_blank" },
+        React.createElement("a", { id: "youtube-link", className: "clear-button", href: "../FloatBin.html", },
           React.createElement("i", { className: "fa-brands fa-youtube" }),
-          React.createElement("span", null, "Hyperplexed")),
-        React.createElement(Weather, null),
+          React.createElement("span", null, "FloatBin IA")),
         React.createElement(Restaurants, null),
-        React.createElement(ControlEstados),
+        React.createElement(ControlClima),
         React.createElement(Tools, null),
+        React.createElement(ControlEstados),
+
         React.createElement(Movies, null)))));
 };
 

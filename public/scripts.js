@@ -30,14 +30,14 @@ const svg = d3.select("#chart").append("svg")
     .attr("height", 500);
 
 svg.selectAll("rect")
-   .data(data)
-   .enter()
-   .append("rect")
-   .attr("x", (d, i) => i * 30)
-   .attr("y", d => 500 - d * 5)
-   .attr("width", 20)
-   .attr("height", d => d * 5)
-   .attr("fill", "cyan");
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("x", (d, i) => i * 30)
+    .attr("y", d => 500 - d * 5)
+    .attr("width", 20)
+    .attr("height", d => d * 5)
+    .attr("fill", "cyan");
 
 // Simulación de actualización de datos
 setInterval(() => {
