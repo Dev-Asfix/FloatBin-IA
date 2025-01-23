@@ -296,7 +296,7 @@ const Tools = () => {
     return [{
       icon: "fa-solid fa-cloud-sun",
       id: 1,
-      image: "https://images.unsplash.com/photo-1492011221367-f47e3ccd77a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHdlYXRoZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      image: "./images/gestion.png",
       label: "Monitoreo: Tiempo real",
       name: "Gestión Smart"
     }, {
